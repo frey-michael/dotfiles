@@ -1,0 +1,24 @@
+{
+  "languageserver": {
+    "golangci-server": {
+      "command": "golangci-server",
+      "filetypes": [
+        "go"
+      ]
+    },
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": [
+        "cs"
+      ],
+      "rootPatterns": [
+        "*.csproj",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ]
+    }
+  },
+  "svelte.enable-ts-plugin": true,
+  "coc.preferences.formatOnSave": true
+}

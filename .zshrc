@@ -70,7 +70,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-syntax-highlighting)
+plugins=(git colored-man-pages zsh-syntax-highlighting docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,7 +111,6 @@ alias -s js=nvim
 alias -s md=nvim
 alias -s dart=nvim
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-
 export GOPRIVATE=github.com/Kesseline
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

@@ -10,8 +10,6 @@ set smartindent
 set number
 set relativenumber
 
-lua require('plugins')
-
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -201,3 +199,44 @@ nmap <Leader>dk <Plug>VimspectorRestart
 nmap <Leader>dh <Plug>VimspectorStepOut
 nmap <Leader>dl <Plug>VimspectorStepInto
 nmap <Leader>dj <Plug>VimspectorStepOver
+
+call plug#begin()
+
+  Plug 'neoclide/coc.nvim', {'branch' : 'release'}
+
+	Plug 'EdenEast/nightfox.nvim'
+
+	Plug 'davidgranstrom/nvim-markdown-preview'
+
+	Plug 'https://github.com/tpope/vim-fugitive'
+
+	Plug  'https://github.com/dart-lang/dart-vim-plugin'
+
+  Plug 'fatih/vim-go'
+
+  Plug 'junegunn/fzf.vim'
+
+  Plug 'puremourning/vimspector'
+
+  Plug 'leafOfTree/vim-svelte-plugin'
+
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+call plug#end()
+
+" Set colorscheme
+colorscheme nightfox
+
+" Configure Treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+  ensure_installed = { "c_sharp" },
+
+  highlight = {
+    enable = true,
+
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
